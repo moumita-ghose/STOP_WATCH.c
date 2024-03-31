@@ -1,0 +1,53 @@
+#include <stdio.h>
+#include<windows.h>
+#include<stdlib.h>
+#define CYCLE 60
+
+int main()
+{
+    int h,m,s;
+    printf("Enter hours : minutes : seconds:\n");
+    scanf("%d%d%d",&h,&m,&s);
+    int hour=0,minute=0,second=0;
+    while(1)
+    {
+        printf("\n\n\n");
+        printf("      ############-----> YOUR TIME STARTS NOW <-----############\n");
+        printf("      #                                                        #\n");
+        printf("      #                                                        #\n");
+        printf("      #                   %.2d : %.2d : %.2d                         #\n",hour,minute,second);
+        printf("      #                                                        #\n");
+        printf("      #                                                        #\n");
+        printf("      ##########################################################\n\n\n");
+        if(hour==h && minute==m && second==s)
+        {
+            printf("\n\n");
+            printf("       #############################################################\n");
+            printf("       #                                                           #\n");
+            printf("       #                                                           #\n");
+            printf("       #                                                           #\n");
+            printf("       #       -------> YOUR TIME IS UP <---------                 #\n");
+            printf("       #                                                           #\n");
+            printf("       #                                                           #\n");
+            printf("       #                                                           #\n");
+            printf("       #############################################################\n\n\n\n\n\n\n");
+
+            break;
+        }
+        second++;
+        Sleep(1000);
+        if(second==CYCLE)
+        {
+            minute++;
+            second=0;
+        }
+        if(minute==CYCLE)
+        {
+            hour++;
+            minute=0;
+        }
+        system("CLS");
+
+    }
+    return 0;
+}
